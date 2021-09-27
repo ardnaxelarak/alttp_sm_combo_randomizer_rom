@@ -61,7 +61,7 @@ incsrc newitems.asm
 warnpc $8affff
 
 org $f88000            ; Bank B8 (Free space in SM)
-base $b88000           
+base $b88000
 incsrc itemdowngrade.asm
 incsrc bugfixes.asm
 incsrc darkworldspawn.asm
@@ -93,6 +93,7 @@ incsrc map.asm
 incsrc dialog.asm
 incsrc events.asm
 incsrc entrances.asm
+incsrc accessibility.asm
 incsrc heartbeep.asm
 incsrc capacityupgrades.asm
 incsrc doorframefixes.asm
@@ -101,6 +102,7 @@ incsrc roomloading.asm
 incsrc icepalacegraphics.asm
 incsrc rngfixes.asm
 incsrc openmode.asm
+incsrc quickswap.asm
 incsrc stats.asm
 incsrc textskip_functions.asm
 incsrc itemtext.asm
@@ -328,6 +330,9 @@ Dungeon_SaveRoomQuadrantData:
 
 org $02FD8A ; 17D8A - Bank07.asm: 3732 Note: Different bank
 LoadGearPalettes_bunny:
+
+org $02FEAB
+Filter_Majorly_Whiten_Color:
 
 org $05A51D
 Sprite_SpawnFallingItem:

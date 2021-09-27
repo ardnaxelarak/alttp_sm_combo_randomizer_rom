@@ -205,7 +205,7 @@ db #$00 ; #$00 = Normal (default) - #$01 = Inverted
 ;--------------------------------------------------------------------------------
 org $40004B ; PC 0x18004B
 QuickSwapFlag:
-db #$00 ; #$00 = Off (default) - #$01 = On
+db #$01 ; #$00 = Off (default) - #$01 = On
 ;--------------------------------------------------------------------------------
 org $40004C ; PC 0x18004C
 SmithTravelsFreely:
@@ -822,8 +822,8 @@ Restrict_Ponds:
 db #$01 ; #$00 = Original Behavior - #$01 - Restrict to Bottles (Default)
 ;================================================================================
 org $40017F ; PC 0x18017F
-Seizure_Safety:
-db #$00 ; #$00 = Off (Default) - #$01 = Limit Certain Effects
+DisableFlashing:
+db #$01 ; #$00 = Flashing Enabled (Default) - #$01 = Flashing Disabled
 ;================================================================================
 ;---- --hb
 ;h - Hookshot

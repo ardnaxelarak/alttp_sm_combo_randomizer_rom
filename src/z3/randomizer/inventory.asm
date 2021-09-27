@@ -124,7 +124,7 @@ RTL
 ;ProcessBottleMenu:
 ;--------------------------------------------------------------------------------
 ProcessBottleMenu:
-	LDA $F4 : AND #$40 : BEQ .y_not_pressed ; skip if Y is not down
+;	LDA $F4 : AND #$40 : BEQ .y_not_pressed ; skip if Y is not down
 	LDA $7EF34F ; check bottle state
 	BEQ .no_bottles ; skip if we have no bottles
 	PHX
