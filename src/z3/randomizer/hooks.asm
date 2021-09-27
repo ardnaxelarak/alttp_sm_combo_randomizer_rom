@@ -540,9 +540,9 @@ org $098908 ; 48908 - ancilla_init.asm:1258 (LDA .x_offsets, Y)
 LDA.w AddReceivedItemExpanded_x_offsets, Y
 
 org $08C6C8 ; 446C8 - ancilla_receive_item.asm:538 (LDA AddReceiveItem.properties, X)
-LDA.l AddReceivedItemExpanded_properties, X
+JSL CheckReceivedItemPropertiesBeforeLoad
 org $00C6F9 ; 446F9 - ancilla_receive_item.asm:570 (LDA AddReceiveItem.properties, X)
-LDA.l AddReceivedItemExpanded_properties, X
+JSL CheckReceivedItemPropertiesBeforeLoad
 
 org $08C6DE ; 446DE - ancilla_receive_item.asm:550 (LDA .wide_item_flag, X)
 LDA.l AddReceivedItemExpanded_wide_item_flag, X
@@ -2510,11 +2510,6 @@ org $028849 ; Dungeon (JSL Player_Main)
     jsl alttp_mw_handle_queue
 
 
-
-; Dark room temporary light cone disable
-;
-org $08C531
-    jsl DisableTemporaryCone : nop #3
 
 ; Hook the beginning of Save & Quit to add soft-reset restrictions
 org $00fa2b ; Bank00.asm : 8724 (LDA.b #$17 : STA $10)
