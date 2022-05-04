@@ -486,6 +486,17 @@ JSL.l MSMusicReset : NOP
 ; $22 = $0100 - $00FF - Hobo
 ;--------------------------------------------------------------------------------
 
+;================================================================================
+; Faster Great Fairies
+;--------------------------------------------------------------------------------
+org $06C83D ; <- sprite_ponds.asm : 784 ( LDA.b #$FF : STA $0DF0, X )
+db $30 ; (any faster and she appears as link is still throwing the bottle)
+;--------------------------------------------------------------------------------
+org $06C896 ; <- sprite_ponds.asm : 844 ( LDA $1A : AND.b #$07 : BNE BRANCH_ALPHA )
+db $03 ; fade in speed. Should be power of 2 minus 1
+org $06C985 ; <- sprite_ponds.asm : 1025 ( LDA $1A : AND.b #$07 : BNE BRANCH_ALPHA )
+db $03 ; fade out speed. Should be power of 2 minus 1
+;--------------------------------------------------------------------------------
 
 ;================================================================================
 ; New Items
